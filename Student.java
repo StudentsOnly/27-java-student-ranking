@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Student implements Comparable<Student> {
 
     String name;
@@ -8,10 +10,15 @@ public class Student implements Comparable<Student> {
         this.score = score;
 
     }
+    
 
     @Override
     public int compareTo(Student student) {
-        return ((Double)student.score).compareTo(this.score);
+        int result = ((Double)student.score).compareTo(this.score);
+        if(result == 0){
+            result = this.name.compareTo(student.name);
+        }
+        return result;
     }
 
     @Override
