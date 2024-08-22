@@ -10,7 +10,7 @@ public class Student implements Comparable<Student> {
         this.score = score;
 
     }
-    
+
 
     @Override
     public int compareTo(Student student) {
